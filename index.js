@@ -33,7 +33,7 @@ const questions = [
     {
         type: 'input',
         message: 'How to run tests on your project?',
-        name: 'tests',
+        name: 'test',
     },
     {
         type: 'list',
@@ -42,14 +42,14 @@ const questions = [
         choices: ['Apache', 'GNU', 'MIT', 'None']
     },
     {
-        type: 'input',
-        message: 'Please enter your Github username:',
-        name: 'username',
+        type: "input",
+        message: "Please provide your email for contact purposes:",
+        name: "contact"
     },
     {
-        type: 'email',
-        message: ' Please enter your email address:',
-        name: 'email',
+        type: 'input',
+        message: 'Please enter your Github username:',
+        name: 'githubUsername',
     },
 ];
 
