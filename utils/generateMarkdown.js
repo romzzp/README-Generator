@@ -36,8 +36,6 @@ function renderLicenseSection(license) {
       return `The project's license is ${renderLicenseLink(license)} ${renderLicenseBadge(license)}`;
     case "GNU":
       return `The project's license is ${renderLicenseLink(license)} ${renderLicenseBadge(license)}`;
-    case "ISC":
-      return `The project's license is ${renderLicenseLink(license)} ${renderLicenseBadge(license)}`;
     case "MIT":
       return `The project's license is ${renderLicenseLink(license)} ${renderLicenseBadge(license)}`;
     default:
@@ -48,7 +46,8 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseBadge(data.license)}
+  ## Description
   ${data.description}
   ## Table of Contents
   \n [Installation](#installation)
@@ -62,6 +61,7 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
   ## License
+  ${renderLicenseSection(data.license)}
   ## Contribution Guidelines
   ${data.contribution}
   ## Test Instructions
@@ -69,7 +69,7 @@ function generateMarkdown(data) {
   ## Questions
   ${data.contact}
     
-  \nGitHub Profile: ${data.githubUsername}
+  \nGitHub Profile: https://github.com/${data.githubUsername}
   `;
 }
 
